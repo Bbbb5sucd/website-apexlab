@@ -15,16 +15,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentLang = 'ar'; // default Arabic
 
-    // ===== Loading Screen =====
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            loader.classList.add('hidden');
-            // Trigger entrance animations after loader fades
+    // ===== Loading Screen (only first visit per session) =====
+    const loaderShown = sessionStorage.getItem('apex-loader-shown');
+
+    if (loaderShown) {
+        // Already shown this session — skip instantly
+        loader.classList.add('hidden');
+        document.body.classList.add('page-ready');
+    } else {
+        window.addEventListener('load', () => {
             setTimeout(() => {
-                document.body.classList.add('page-ready');
-            }, 400);
-        }, 1200);
-    });
+                loader.classList.add('hidden');
+                sessionStorage.setItem('apex-loader-shown', '1');
+                setTimeout(() => {
+                    document.body.classList.add('page-ready');
+                }, 400);
+            }, 1200);
+        });
+    }
 
     // ===== Mobile menu toggle =====
     menuBtn.addEventListener('click', () => {
