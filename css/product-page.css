@@ -1,0 +1,165 @@
+/* ========================================
+   APEX LABS — PRODUCT PAGE STYLES
+======================================== */
+
+.product-nav {
+    background: var(--white);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.back-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--blue);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+.back-link:hover {
+    color: var(--purple);
+}
+
+.product-page {
+    padding: 120px 0 60px;
+    min-height: 70vh;
+}
+
+.product-page-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+}
+
+.product-page-img {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--gray-50);
+}
+.product-page-img img {
+    width: 100%;
+    display: block;
+    border-radius: var(--radius);
+}
+
+.product-page-tag {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: linear-gradient(135deg, var(--blue), var(--purple));
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+.product-page-tag.tag-liquid {
+    background: linear-gradient(135deg, var(--teal), var(--blue));
+}
+
+.product-page-info h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--gray-900);
+    margin-bottom: 16px;
+}
+.product-page-info h1 span {
+    color: var(--blue);
+    font-weight: 600;
+}
+
+.product-page-desc {
+    font-size: 1rem;
+    color: var(--gray-600);
+    line-height: 1.9;
+    margin-bottom: 24px;
+}
+
+.product-page-price {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 24px;
+    flex-direction: row-reverse;
+}
+body.ltr .product-page-price {
+    flex-direction: row;
+}
+.product-page-price .price {
+    font-size: 2rem;
+}
+.product-page-price .price-old {
+    font-size: 1.2rem;
+}
+
+.product-page-info .btn {
+    display: inline-block;
+    margin-bottom: 32px;
+}
+
+.product-page-specs,
+.product-page-benefits {
+    margin-bottom: 28px;
+}
+
+.product-page-specs h3,
+.product-page-benefits h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--blue-100);
+}
+
+.product-page-specs ul,
+.product-page-benefits ul {
+    list-style: none;
+}
+
+.product-page-specs li,
+.product-page-benefits li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    font-size: 0.95rem;
+    color: var(--gray-600);
+}
+
+.product-page-specs li i {
+    color: var(--blue);
+    font-size: 0.85rem;
+    width: 20px;
+    text-align: center;
+}
+
+.product-page-benefits li i {
+    color: var(--green);
+    font-size: 0.8rem;
+    width: 20px;
+    text-align: center;
+}
+
+/* ========== MOBILE ========== */
+@media (max-width: 640px) {
+    .product-page-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .product-page {
+        padding: 100px 0 40px;
+    }
+
+    .product-page-info h1 {
+        font-size: 1.6rem;
+    }
+
+    .product-page-price .price {
+        font-size: 1.6rem;
+    }
+}

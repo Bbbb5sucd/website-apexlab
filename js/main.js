@@ -11,8 +11,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const nav = document.querySelector('.nav');
     const backToTop = document.getElementById('backToTop');
     const langBtn = document.getElementById('langBtn');
+    const loader = document.getElementById('loader');
 
     let currentLang = 'ar'; // default Arabic
+
+    // ===== Loading Screen =====
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            loader.classList.add('hidden');
+        }, 1200);
+    });
 
     // ===== Mobile menu toggle =====
     menuBtn.addEventListener('click', () => {
@@ -63,11 +71,26 @@ document.addEventListener('DOMContentLoaded', () => {
             langBtn.textContent = 'EN';
         }
 
+        localStorage.setItem('apex-lang', currentLang);
+
         // Swap all text with data-ar / data-en attributes
         document.querySelectorAll('[data-ar][data-en]').forEach(el => {
             el.innerHTML = el.getAttribute('data-' + currentLang);
         });
     });
+
+    // Restore language preference
+    const savedLang = localStorage.getItem('apex-lang');
+    if (savedLang === 'en') {
+        currentLang = 'en';
+        document.documentElement.lang = 'en';
+        document.documentElement.dir = 'ltr';
+        document.body.classList.add('ltr');
+        langBtn.textContent = 'AR';
+        document.querySelectorAll('[data-ar][data-en]').forEach(el => {
+            el.innerHTML = el.getAttribute('data-en');
+        });
+    }
 
     // ===== Product filter tabs =====
     const filterBtns = document.querySelectorAll('.filter-btn');
@@ -130,6 +153,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const comingSoon = document.querySelector('.coming-soon');
         if (comingSoon) comingSoon.classList.add('animate-on-scroll', 'slide-up');
+
+        document.querySelectorAll('.testimonial-card').forEach((el, i) => {
+            el.classList.add('animate-on-scroll', 'slide-up');
+            el.style.transitionDelay = `${i * 0.12}s`;
+        });
     }
 
     setupScrollAnimations();

@@ -19,6 +19,25 @@
 </head>
 <body>
 
+    <!-- LOADING SCREEN -->
+    <div class="loader" id="loader">
+        <div class="loader-inner">
+            <svg class="loader-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="loaderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#2563EB"/>
+                        <stop offset="100%" style="stop-color:#8B5CF6"/>
+                    </linearGradient>
+                </defs>
+                <!-- Hexagon -->
+                <polygon points="100,10 178,55 178,145 100,190 22,145 22,55" fill="none" stroke="url(#loaderGrad)" stroke-width="4" class="loader-hex"/>
+                <!-- A letter -->
+                <text x="100" y="118" font-family="'Space Grotesk', sans-serif" font-size="72" font-weight="700" fill="url(#loaderGrad)" text-anchor="middle">A</text>
+            </svg>
+            <p class="loader-text">APEX <span>LABS</span></p>
+        </div>
+    </div>
+
     <!-- CHEMICAL STRUCTURE DECORATIONS -->
     <div class="chem-deco chem-deco-1" aria-hidden="true">
         <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -122,8 +141,8 @@
                             <li><i class="fas fa-check"></i> <span data-ar="الجرعة: 10–20 ملغ/يوم" data-en="Dosage: 10–20 mg/day">الجرعة: 10–20 ملغ/يوم</span></li>
                         </ul>
                         <div class="product-bottom">
-                            <span class="price">₪---</span>
-                            <a href="#contact" class="btn btn-sm" data-ar="اطلب الآن" data-en="Order">اطلب الآن</a>
+                            <div class="price-wrap"><span class="price-old">₪300</span><span class="price">₪250</span></div>
+                            <div class="product-actions"><a href="products/mk-677.html" class="btn btn-sm btn-outline" data-ar="التفاصيل" data-en="Details">التفاصيل</a><a href="#contact" class="btn btn-sm" data-ar="اطلب الآن" data-en="Order">اطلب الآن</a></div>
                         </div>
                     </div>
                 </div>
@@ -151,8 +170,8 @@
                             <li><i class="fas fa-check"></i> <span data-ar="الجرعة: 10–20 ملغ/يوم" data-en="Dosage: 10–20 mg/day">الجرعة: 10–20 ملغ/يوم</span></li>
                         </ul>
                         <div class="product-bottom">
-                            <span class="price">₪---</span>
-                            <a href="#contact" class="btn btn-sm" data-ar="اطلب الآن" data-en="Order">اطلب الآن</a>
+                            <div class="price-wrap"><span class="price-old">₪300</span><span class="price">₪250</span></div>
+                            <div class="product-actions"><a href="products/rad-140.html" class="btn btn-sm btn-outline" data-ar="التفاصيل" data-en="Details">التفاصيل</a><a href="#contact" class="btn btn-sm" data-ar="اطلب الآن" data-en="Order">اطلب الآن</a></div>
                         </div>
                     </div>
                 </div>
@@ -181,8 +200,8 @@
                             <li><i class="fas fa-check"></i> <span data-ar="الجرعة: 5–10 ملغ/يوم" data-en="Dosage: 5–10 mg/day">الجرعة: 5–10 ملغ/يوم</span></li>
                         </ul>
                         <div class="product-bottom">
-                            <span class="price">₪---</span>
-                            <a href="#contact" class="btn btn-sm" data-ar="اطلب الآن" data-en="Order">اطلب الآن</a>
+                            <div class="price-wrap"><span class="price-old">₪300</span><span class="price">₪250</span></div>
+                            <div class="product-actions"><a href="products/lgd-4033.html" class="btn btn-sm btn-outline" data-ar="التفاصيل" data-en="Details">التفاصيل</a><a href="#contact" class="btn btn-sm" data-ar="اطلب الآن" data-en="Order">اطلب الآن</a></div>
                         </div>
                     </div>
                 </div>
@@ -210,8 +229,8 @@
                             <li><i class="fas fa-check"></i> <span data-ar="الجرعة: 10–20 ملغ/يوم" data-en="Dosage: 10–20 mg/day">الجرعة: 10–20 ملغ/يوم</span></li>
                         </ul>
                         <div class="product-bottom">
-                            <span class="price">₪---</span>
-                            <a href="#contact" class="btn btn-sm" data-ar="اطلب الآن" data-en="Order">اطلب الآن</a>
+                            <div class="price-wrap"><span class="price-old">₪300</span><span class="price">₪250</span></div>
+                            <div class="product-actions"><a href="products/yk-11.html" class="btn btn-sm btn-outline" data-ar="التفاصيل" data-en="Details">التفاصيل</a><a href="#contact" class="btn btn-sm" data-ar="اطلب الآن" data-en="Order">اطلب الآن</a></div>
                         </div>
                     </div>
                 </div>
@@ -238,8 +257,8 @@
                             <li><i class="fas fa-check"></i> <span data-ar="توافر حيوي ممتاز" data-en="Excellent bioavailability">توافر حيوي ممتاز</span></li>
                         </ul>
                         <div class="product-bottom">
-                            <span class="price">₪---</span>
-                            <a href="#contact" class="btn btn-sm" data-ar="اطلب الآن" data-en="Order">اطلب الآن</a>
+                            <div class="price-wrap"><span class="price-old">₪350</span><span class="price">₪250</span></div>
+                            <div class="product-actions"><a href="products/swole-double.html" class="btn btn-sm btn-outline" data-ar="التفاصيل" data-en="Details">التفاصيل</a><a href="#contact" class="btn btn-sm" data-ar="اطلب الآن" data-en="Order">اطلب الآن</a></div>
                         </div>
                     </div>
                 </div>
@@ -264,8 +283,8 @@
                             <li><i class="fas fa-check"></i> <span data-ar="الجرعة: 25 ملغ/يوم" data-en="Dosage: 25 mg/day">الجرعة: 25 ملغ/يوم</span></li>
                         </ul>
                         <div class="product-bottom">
-                            <span class="price">₪---</span>
-                            <a href="#contact" class="btn btn-sm" data-ar="اطلب الآن" data-en="Order">اطلب الآن</a>
+                            <div class="price-wrap"><span class="price-old">₪350</span><span class="price">₪250</span></div>
+                            <div class="product-actions"><a href="products/mk-677-liquid.html" class="btn btn-sm btn-outline" data-ar="التفاصيل" data-en="Details">التفاصيل</a><a href="#contact" class="btn btn-sm" data-ar="اطلب الآن" data-en="Order">اطلب الآن</a></div>
                         </div>
                     </div>
                 </div>
@@ -319,6 +338,40 @@
             <div class="location-info">
                 <p><i class="fas fa-map-marker-alt"></i> <span data-ar="رام الله، الضفة الغربية" data-en="Ramallah, West Bank">رام الله، الضفة الغربية</span></p>
                 <p><i class="fas fa-shipping-fast"></i> <span data-ar="شحن لكل مدن الضفة الغربية" data-en="Shipping across the entire West Bank">شحن لكل مدن الضفة الغربية</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title" data-ar="آراء عملائنا" data-en="What Our Clients Say">آراء عملائنا</h2>
+            <div class="testimonial-grid">
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text" data-ar="طلبت MK-677 والتوصيل كان سريع على نابلس. المنتج أصلي وبدأت ألاحظ فرق بالنوم والطاقة بعد أسبوعين." data-en="Ordered MK-677 and delivery to Nablus was fast. Product is authentic, noticed a difference in sleep and energy after two weeks.">طلبت MK-677 والتوصيل كان سريع على نابلس. المنتج أصلي وبدأت ألاحظ فرق بالنوم والطاقة بعد أسبوعين.</p>
+                    <div class="testimonial-author">
+                        <span class="testimonial-name" data-ar="أحمد م. — نابلس" data-en="Ahmad M. — Nablus">أحمد م. — نابلس</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text" data-ar="جربت RAD-140 لشهر كامل وكانت النتائج ممتازة. القوة في التمارين زادت بشكل ملحوظ والتعافي صار أسرع. أنصح فيه." data-en="Tried RAD-140 for a full month and the results were excellent. Strength in workouts increased noticeably and recovery got faster. Highly recommend.">جربت RAD-140 لشهر كامل وكانت النتائج ممتازة. القوة في التمارين زادت بشكل ملحوظ والتعافي صار أسرع. أنصح فيه.</p>
+                    <div class="testimonial-author">
+                        <span class="testimonial-name" data-ar="محمد ع. — رام الله" data-en="Mohammad A. — Ramallah">محمد ع. — رام الله</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★<span class="star-empty">★</span></div>
+                    <p class="testimonial-text" data-ar="التعامل كان محترم والتغليف ممتاز. جربت SWOLE Double وحاسس بفرق بالضخامة. بس التوصيل أخذ يومين على الخليل." data-en="Great service and excellent packaging. Tried SWOLE Double and felt a difference in mass gains. Delivery to Hebron took two days though.">التعامل كان محترم والتغليف ممتاز. جربت SWOLE Double وحاسس بفرق بالضخامة. بس التوصيل أخذ يومين على الخليل.</p>
+                    <div class="testimonial-author">
+                        <span class="testimonial-name" data-ar="يوسف ك. — الخليل" data-en="Yousef K. — Hebron">يوسف ك. — الخليل</span>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>

@@ -541,6 +541,21 @@ body.ltr .back-to-top {
     border-top: 1px solid var(--gray-100);
 }
 
+.product-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-outline {
+    background: transparent !important;
+    border: 2px solid var(--blue) !important;
+    color: var(--blue) !important;
+    -webkit-text-fill-color: var(--blue) !important;
+}
+.btn-outline:hover {
+    background: var(--blue-50) !important;
+}
+
 .price {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1.4rem;
@@ -557,6 +572,119 @@ body.ltr .back-to-top {
     color: var(--gray-400);
     font-size: 0.95rem;
     font-style: italic;
+}
+
+/* ========== PRICE DISCOUNT ========== */
+.price-wrap {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    flex-direction: row-reverse;
+}
+body.ltr .price-wrap {
+    flex-direction: row;
+}
+.price-old {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gray-400);
+    text-decoration: line-through;
+}
+
+/* ========== LOADING SCREEN ========== */
+.loader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+.loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+.loader-inner {
+    text-align: center;
+}
+.loader-logo {
+    width: 100px;
+    height: 100px;
+    animation: loaderPulse 1.6s ease-in-out infinite;
+}
+.loader-hex {
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+    animation: loaderDraw 1.8s ease forwards;
+}
+.loader-text {
+    margin-top: 16px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--blue);
+    letter-spacing: 3px;
+}
+.loader-text span {
+    color: var(--purple);
+}
+@keyframes loaderPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.06); }
+}
+@keyframes loaderDraw {
+    to { stroke-dashoffset: 0; }
+}
+
+/* ========== TESTIMONIALS ========== */
+.testimonials {
+    padding: 80px 0;
+    background: var(--gray-50);
+}
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+}
+.testimonial-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+.testimonial-stars {
+    color: var(--amber);
+    font-size: 1.1rem;
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+}
+.testimonial-stars .star-empty {
+    opacity: 0.25;
+}
+.testimonial-text {
+    font-size: 0.95rem;
+    color: var(--gray-600);
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+.testimonial-author {
+    border-top: 1px solid var(--gray-100);
+    padding-top: 14px;
+}
+.testimonial-name {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--gray-700);
 }
 
 /* ========== SCROLL ANIMATIONS ========== */
@@ -843,4 +971,6 @@ body.ltr .back-to-top {
 
     .filter-tabs { gap: 8px; }
     .filter-btn { padding: 8px 18px; font-size: 0.85rem; }
+
+    .testimonial-grid { grid-template-columns: 1fr; }
 }
