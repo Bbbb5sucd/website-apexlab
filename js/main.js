@@ -19,6 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('load', () => {
         setTimeout(() => {
             loader.classList.add('hidden');
+            // Trigger entrance animations after loader fades
+            setTimeout(() => {
+                document.body.classList.add('page-ready');
+            }, 400);
         }, 1200);
     });
 

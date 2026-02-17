@@ -1,0 +1,8 @@
+name = "apex-labs-proxy"
+main = "index.js"
+compatibility_date = "2024-01-01"
+
+routes = [
+  { pattern = "apex-labs.tech/*", zone_name = "apex-labs.tech" },
+  { pattern = "apex-labs.tech", zone_name = "apex-labs.tech" }
+]
