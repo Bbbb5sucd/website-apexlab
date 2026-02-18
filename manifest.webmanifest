@@ -1,0 +1,19 @@
+{
+  "name": "APEX Labs — مكملات رياضية ومركبات بحثية",
+  "short_name": "APEX Labs",
+  "description": "أفضل مركبات بحثية ومكملات أداء في الضفة الغربية.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#2563EB",
+  "dir": "rtl",
+  "lang": "ar",
+  "icons": [
+    {
+      "src": "/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

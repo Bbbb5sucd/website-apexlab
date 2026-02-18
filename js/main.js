@@ -15,6 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentLang = 'ar'; // default Arabic
 
+    // ===== Apply ?lang= query param on load =====
+    const urlParams = new URLSearchParams(window.location.search);
+    const langParam = urlParams.get('lang');
+    if (langParam === 'en' || langParam === 'ar') {
+        localStorage.setItem('apex-lang', langParam);
+    }
+
     // ===== Loading Screen (only first visit per session) =====
     const loaderShown = sessionStorage.getItem('apex-loader-shown');
 
@@ -38,12 +45,15 @@ document.addEventListener('DOMContentLoaded', () => {
     menuBtn.addEventListener('click', () => {
         menuBtn.classList.toggle('active');
         navLinks.classList.toggle('open');
+        const expanded = menuBtn.classList.contains('active');
+        menuBtn.setAttribute('aria-expanded', expanded);
     });
 
     navLinks.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             menuBtn.classList.remove('active');
             navLinks.classList.remove('open');
+            menuBtn.setAttribute('aria-expanded', 'false');
         });
     });
 

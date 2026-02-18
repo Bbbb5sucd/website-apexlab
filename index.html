@@ -127,7 +127,7 @@
             "@type": "Product",
             "name": "LGD-4033 (Ligandrol)",
             "description": "يزيد الكتلة العضلية، يعزز القوة، يحسّن كثافة العظام. 15mg / حبة — 60 حبة.",
-            "image": "https://apex-labs.tech/assets/products/LGD-4033.jpg.webp",
+            "image": "https://apex-labs.tech/assets/products/Rad-140.jpg",
             "url": "https://apex-labs.tech/products/lgd-4033.html",
             "offers": {
               "@type": "Offer",
@@ -161,7 +161,7 @@
             "@type": "Product",
             "name": "SWOLE Double (LGD + MK-677)",
             "description": "مزيج قوي من LGD-4033 و MK-677. 35mg/ml — عبوة 30ml.",
-            "image": "https://apex-labs.tech/assets/products/SWOLE.webp",
+            "image": "https://apex-labs.tech/assets/products/Rad-140.jpg",
             "url": "https://apex-labs.tech/products/swole-double.html",
             "offers": {
               "@type": "Offer",
@@ -178,7 +178,7 @@
             "@type": "Product",
             "name": "MK-677 سائل (Ibutamoren)",
             "description": "محفّز إفراز هرمون النمو — يعزز IGF-1 ومستويات هرمون النمو. 25mg/ml — عبوة 30ml.",
-            "image": "https://apex-labs.tech/assets/products/MK677.webp",
+            "image": "https://apex-labs.tech/assets/products/Rad-140.jpg",
             "url": "https://apex-labs.tech/products/mk-677-liquid.html",
             "offers": {
               "@type": "Offer",
@@ -202,6 +202,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="theme-color" content="#2563EB">
 </head>
 <body>
 
@@ -209,7 +211,7 @@
     <div class="loader" id="loader">
         <div class="loader-inner">
             <div class="loader-logo">
-                <svg viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 120 140" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path class="loader-hex" d="M60 5 L110 30 L110 80 L60 105 L10 80 L10 30 Z" stroke="url(#loaderGrad)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
                     <text x="60" y="68" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="36" fill="url(#loaderGrad)">A</text>
                     <defs>
@@ -275,7 +277,7 @@
                 <a href="#contact" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a>
             </div>
             <button class="lang-btn" id="langBtn" title="Switch Language">EN</button>
-            <button class="menu-btn" id="menuBtn" aria-label="القائمة">
+            <button class="menu-btn" id="menuBtn" aria-label="القائمة" aria-controls="navLinks" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
         </div>
@@ -526,7 +528,7 @@
                         <p>researchem.ps@protonmail.com</p>
                     </div>
                 </a>
-                <a href="https://t.me/apex_labs_1a" class="contact-item" target="_blank">
+                <a href="https://t.me/apex_labs_1a" class="contact-item" target="_blank" rel="noopener">
                     <i class="fab fa-telegram"></i>
                     <div>
                         <strong data-ar="تيليجرام" data-en="Telegram">تيليجرام</strong>

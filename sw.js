@@ -5,7 +5,7 @@
    where connectivity can be intermittent).
 ======================================== */
 
-const CACHE_NAME = 'apex-labs-v1';
+const CACHE_NAME = 'apex-labs-v2';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
@@ -15,6 +15,16 @@ const STATIC_ASSETS = [
   '/js/product-page.js',
   '/assets/favicon.svg'
 ];
+
+/**
+ * Strip query string from a URL for cache-key normalisation.
+ * style.css?v=3 → style.css so pre-cached assets always match.
+ */
+function stripQuery(url) {
+  const u = new URL(url);
+  u.search = '';
+  return u.toString();
+}
 
 // Install: Pre-cache essential files
 self.addEventListener('install', (event) => {
@@ -60,19 +70,20 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // For CSS, JS, images: cache-first with network fallback
+  // For CSS, JS, images: cache-first with network fallback (normalise URL)
+  const cacheKey = stripQuery(request.url);
   event.respondWith(
-    caches.match(request).then((cached) => {
+    caches.match(cacheKey).then((cached) => {
       if (cached) {
         // Return cached, but also update cache in background
         fetch(request).then((response) => {
-          caches.open(CACHE_NAME).then((cache) => cache.put(request, response));
+          caches.open(CACHE_NAME).then((cache) => cache.put(cacheKey, response));
         }).catch(() => {});
         return cached;
       }
       return fetch(request).then((response) => {
         const clone = response.clone();
-        caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
+        caches.open(CACHE_NAME).then((cache) => cache.put(cacheKey, clone));
         return response;
       });
     })

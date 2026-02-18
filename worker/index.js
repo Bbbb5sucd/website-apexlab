@@ -1,6 +1,12 @@
 export default {
   async fetch(request) {
     const url = new URL(request.url);
+
+    // Block access to /worker/ internals
+    if (url.pathname.startsWith('/worker/') || url.pathname === '/worker') {
+      return new Response('Not Found', { status: 404 });
+    }
+
     url.hostname = 'website-apexlab.pages.dev';
 
     const newRequest = new Request(url.toString(), {
@@ -22,7 +28,10 @@ export default {
     // === Performance / Caching ===
     const pathname = url.pathname;
 
-    if (pathname.match(/\.(css|js)$/)) {
+    // Service worker must not be cached long to allow updates
+    if (pathname === '/sw.js') {
+      newResponse.headers.set('Cache-Control', 'no-cache, must-revalidate');
+    } else if (pathname.match(/\.(css|js)$/)) {
       // Cache CSS/JS for 1 week
       newResponse.headers.set('Cache-Control', 'public, max-age=604800, stale-while-revalidate=86400');
     } else if (pathname.match(/\.(jpg|jpeg|png|gif|webp|svg|ico|woff2?)$/)) {

@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /worker/
 
 Sitemap: https://apex-labs.tech/sitemap.xml
 
@@ -12,6 +13,3 @@ Allow: /
 
 User-agent: Yandex
 Allow: /
-
-# Disallow worker internals
-Disallow: /worker/
