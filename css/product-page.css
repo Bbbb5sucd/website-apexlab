@@ -5,6 +5,11 @@
 .product-nav {
     background: var(--white);
     box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
 }
 
 .back-link {
@@ -16,9 +21,15 @@
     font-weight: 600;
     font-size: 0.95rem;
     transition: color 0.2s;
+    min-height: 44px;
 }
 .back-link:hover {
     color: var(--purple);
+}
+
+/* Flip arrow for LTR mode */
+body.ltr .back-link i {
+    transform: scaleX(-1);
 }
 
 .product-page {
@@ -161,5 +172,18 @@ body.ltr .product-page-price {
 
     .product-page-price .price {
         font-size: 1.6rem;
+    }
+
+    .product-page-info .btn {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        min-height: 48px;
+    }
+
+    .product-page-specs li,
+    .product-page-benefits li {
+        padding: 10px 0;
+        font-size: 0.9rem;
     }
 }

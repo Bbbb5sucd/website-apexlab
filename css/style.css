@@ -495,6 +495,8 @@ body.ltr .back-to-top {
     padding: 4px 14px;
     border-radius: 20px;
     margin-bottom: 10px;
+    align-self: flex-start;
+    width: fit-content;
 }
 
 .product-card:nth-child(6n+1) .product-tag { color: var(--blue); background: var(--blue-100); }
@@ -586,14 +588,16 @@ body.ltr .back-to-top {
     box-shadow: 0 4px 12px rgba(37,99,235,0.25);
 }
 
-.btn-outline {
+a.btn.btn-outline,
+button.btn.btn-outline {
     background: transparent;
     border: 1.5px solid var(--blue);
     color: var(--blue);
     -webkit-text-fill-color: var(--blue);
     box-shadow: none;
 }
-.btn-outline:hover {
+a.btn.btn-outline:hover,
+button.btn.btn-outline:hover {
     background: var(--blue-50);
     box-shadow: none;
 }
@@ -875,6 +879,11 @@ body.ltr .contact-item:hover {
     text-align: center;
 }
 
+/* Brand-colored contact icons */
+.contact-item .fa-whatsapp { color: #25D366; }
+.contact-item .fa-telegram { color: #0088cc; }
+.contact-item .fa-instagram { color: #E1306C; }
+
 .contact-item strong {
     display: block;
     font-size: 1rem;
@@ -1044,7 +1053,7 @@ body.ltr .contact-item:hover {
 
     .products, .about, .contact { padding: 60px 0; }
 
-    .product-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+    .product-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
     .about-content { grid-template-columns: 1fr; }
 
     .footer-inner {
@@ -1059,10 +1068,10 @@ body.ltr .contact-item:hover {
 
     .chem-deco { display: none; }
 
-    .back-to-top { bottom: 84px; left: 20px; }
+    .back-to-top { bottom: 90px; left: 20px; }
 
     .filter-tabs { gap: 6px; flex-wrap: wrap; }
-    .filter-btn { padding: 7px 14px; font-size: 0.82rem; }
+    .filter-btn { padding: 10px 18px; font-size: 0.82rem; min-height: 44px; }
 
     .testimonial-grid { grid-template-columns: 1fr; }
 

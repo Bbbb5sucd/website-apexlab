@@ -79,6 +79,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ===== Language Toggle =====
     langBtn.addEventListener('click', () => {
+        // Close mobile menu when switching language
+        menuBtn.classList.remove('active');
+        navLinks.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+
         if (currentLang === 'ar') {
             currentLang = 'en';
             document.documentElement.lang = 'en';
