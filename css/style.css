@@ -191,6 +191,17 @@ img { max-width: 100%; }
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+.logo-icon {
+    height: 36px;
+    width: auto;
+    flex-shrink: 0;
+}
+.logo-text {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
@@ -199,14 +210,6 @@ img { max-width: 100%; }
     -webkit-text-fill-color: transparent;
     background-clip: text;
     letter-spacing: 2px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.logo-icon {
-    height: 36px;
-    width: auto;
-    flex-shrink: 0;
 }
 
 .logo-accent {
