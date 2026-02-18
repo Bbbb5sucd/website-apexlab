@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="grad1" x1="0.5" y1="0" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+    <linearGradient id="grad2" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="50%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <linearGradient id="grad3" x1="0" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#1D4ED8"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+  <!-- Outer triangle - main shape -->
+  <path d="M100 10 L185 170 L15 170 Z" fill="url(#grad3)" opacity="0"/>
+  
+  <!-- Left side of A (blue) -->
+  <path d="M100 12 L58 85 L78 85 L100 42 Z" fill="url(#grad1)"/>
+  <path d="M58 85 L15 170 L55 170 L78 85 Z" fill="url(#grad1)"/>
+  
+  <!-- Right side of A (purple) -->
+  <path d="M100 42 L122 85 L142 85 L100 12 Z" fill="#3B82F6"/>
+  <path d="M122 85 L145 170 L185 170 L142 85 Z" fill="url(#grad2)"/>
+  
+  <!-- Inner cutout triangle (creates the A hole) -->
+  <path d="M78 130 L100 90 L122 130 Z" fill="white"/>
+  
+  <!-- Swoosh/arrow accent cutting through -->
+  <path d="M62 115 L108 88 L120 100 L68 130 Z" fill="white" opacity="0.95"/>
+  
+  <!-- Small accent triangle top-right -->
+  <path d="M105 38 L118 62 L130 62 Z" fill="white" opacity="0.3"/>
+</svg>

@@ -199,6 +199,14 @@ img { max-width: 100%; }
     -webkit-text-fill-color: transparent;
     background-clip: text;
     letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo-icon {
+    height: 36px;
+    width: auto;
+    flex-shrink: 0;
 }
 
 .logo-accent {
@@ -637,10 +645,10 @@ body.ltr .price-wrap {
     height: 100px;
     animation: loaderPulse 1.6s ease-in-out infinite;
 }
-.loader-hex {
-    stroke-dasharray: 600;
-    stroke-dashoffset: 600;
-    animation: loaderDraw 1.8s ease forwards;
+.loader-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 .loader-text {
     margin-top: 16px;
@@ -1068,6 +1076,7 @@ body.ltr .price-wrap {
 
     .loader-logo { width: 80px; height: 80px; }
     .loader-text { font-size: 1.2rem; }
+    .logo-icon { height: 28px; }
 }
 
 /* ========== WHATSAPP FLOATING BUTTON ========== */
