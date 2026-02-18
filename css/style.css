@@ -191,20 +191,6 @@ img { max-width: 100%; }
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-}
-.logo-icon {
-    height: 36px;
-    width: 36px;
-    max-height: 36px;
-    flex-shrink: 0;
-    display: block;
-    object-fit: contain;
-}
-.logo-text {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
@@ -217,9 +203,9 @@ img { max-width: 100%; }
 
 .logo-accent {
     font-weight: 600;
+    opacity: 0.85;
     font-size: 0.85em;
     letter-spacing: 3px;
-    filter: brightness(1.15);
 }
 
 .nav-links {
@@ -651,10 +637,10 @@ body.ltr .price-wrap {
     height: 100px;
     animation: loaderPulse 1.6s ease-in-out infinite;
 }
-.loader-logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+.loader-hex {
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+    animation: loaderDraw 1.8s ease forwards;
 }
 .loader-text {
     margin-top: 16px;
@@ -1082,7 +1068,6 @@ body.ltr .price-wrap {
 
     .loader-logo { width: 80px; height: 80px; }
     .loader-text { font-size: 1.2rem; }
-    .logo-icon { height: 28px; width: 28px; max-height: 28px; }
 }
 
 /* ========== WHATSAPP FLOATING BUTTON ========== */
