@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://apex-labs.tech/sitemap.xml
+
+# Allow all crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+# Disallow worker internals
+Disallow: /worker/
