@@ -203,7 +203,7 @@ img { max-width: 100%; }
 
 .logo-accent {
     font-weight: 600;
-    opacity: 0.7;
+    opacity: 0.85;
     font-size: 0.85em;
     letter-spacing: 3px;
 }
@@ -413,7 +413,7 @@ body.ltr .back-to-top {
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 28px;
 }
 
@@ -423,6 +423,8 @@ body.ltr .back-to-top {
     border-radius: var(--radius);
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: flex;
+    flex-direction: column;
 }
 
 .product-card:hover {
@@ -458,6 +460,9 @@ body.ltr .back-to-top {
 
 .product-body {
     padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .product-tag {
@@ -540,6 +545,7 @@ body.ltr .back-to-top {
     padding-top: 16px;
     border-top: 1px solid var(--gray-100);
     gap: 12px;
+    margin-top: auto;
 }
 
 .product-actions {
@@ -963,6 +969,10 @@ body.ltr .price-wrap {
 }
 
 /* ========== MOBILE ========== */
+@media (max-width: 1024px) {
+    .product-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (max-width: 640px) {
     .nav-links {
         display: none;
@@ -1001,7 +1011,7 @@ body.ltr .price-wrap {
 
     .products, .about, .contact { padding: 60px 0; }
 
-    .product-grid { grid-template-columns: 1fr; }
+    .product-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
     .about-content { grid-template-columns: 1fr; }
 
     .footer-inner {
@@ -1016,7 +1026,7 @@ body.ltr .price-wrap {
 
     .chem-deco { display: none; }
 
-    .back-to-top { bottom: 20px; left: 20px; }
+    .back-to-top { bottom: 84px; left: 20px; }
 
     .filter-tabs { gap: 6px; flex-wrap: wrap; }
     .filter-btn { padding: 7px 14px; font-size: 0.82rem; }
@@ -1041,8 +1051,9 @@ body.ltr .price-wrap {
         flex: 1;
         text-align: center;
         justify-content: center;
-        padding: 10px 8px;
-        font-size: 0.82rem;
+        padding: 12px 8px;
+        font-size: 0.88rem;
+        min-height: 44px;
     }
 
     .section-title { font-size: 1.5rem; }
